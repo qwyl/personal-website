@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import { Typography } from 'antd';
 import './App.css';
+import Nav from './components/Nav.js';
+const {Title, Text, Paragraph, Link} = Typography;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Title level = {1}> My first React website xD </Title>
       </header>
+      <Nav></Nav>
     </div>
   );
 }
