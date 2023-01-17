@@ -1,33 +1,39 @@
-import { Typography, Menu } from 'antd';
+import { Typography, Menu, Space } from 'antd';
 import './App.css';
 import Home from './Home';
 import Resume from './Resume';
 import Content from './Content';
 import Log from './Log';
 import More from './More';
-import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
+import duck from './laying_duck.jpg';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 const {Title, Text, Paragraph, Link} = Typography;
 const items = [
   {
-    label: "home",
+    label: <font size="3"> about </font>,
     key:"/",
   },
   {
-    label:"resume",
+    label: <font size="3"> resume </font>,
     key:"/resume",
   },
   {
-    label:"content",
+    label:<font size="3"> content </font>,
     key:"/content",
   },
   {
-    label:"plogblogvlog",
+    label:<font size="3"> plogblogvlog </font>,
     key:"/log",
   },
   {
-    label:"future/fun",
+    label: <font size="3"> more </font>,
     key:"/more",
   },
+  {
+    label: <img src={duck}
+                width='120'
+                height='40'/>
+  }
 ];
 
 
@@ -38,12 +44,15 @@ function App() {
   return (
     <div className="App">
       <Title level = {1}> My first React website xD </Title>
-      <Menu onClick={({key}) => {
-        navigate(key);
-      }}
-            mode="horizontal"
-            items={items}
-      />
+      <Space>
+        <Menu onClick={({key}) => {
+          navigate(key);
+        }}
+              mode="horizontal"
+              items={items}
+              style={{justifyContent: 'flex-end'}}
+        />
+      </Space>
       <div>
         <Routes>
           <Route path="/" element={<Home />}/>
